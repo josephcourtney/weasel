@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "weasel"
+dynamic = ["version"]
+description = "weasel websocket library"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "Joseph M Courtney", email = "5942706+josephcourtney@users.noreply.github.com" },
+]
+maintainers = [
+    { name = "Joseph M Courtney", email = "5942706+josephcourtney@users.noreply.github.com" },
+]
+dependencies = [
+]
+requires-python = ">=3.12"
+
+[project.optional-dependencies]
+dev = ["ruff", "mypy", "pytest", "pytest-asyncio", "pytest-mock"]
+
+[tool.hatch.version]
+path = "src/weasel/__init__.py"
+
+[tool.mypy]
+files = ["ruff_lsp", "tests"]
+no_implicit_optional = true
+check_untyped_defs = true
+
+# [[tool.mypy.overrides]]
+# ignore_missing_imports = true
